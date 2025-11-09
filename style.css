@@ -9,15 +9,23 @@ body{
     margin: 0;
 }
 header{
-    background-color: red;
+    background-color: #B79FAD;
     height: 10vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 1.3em;
 }
+a{
+    text-decoration: none;
+    color: black;
+    margin-right: 1%;
+}
+a:focus{
+    outline: none;
+}
 main{
-    background-color: aqua;
+    background-color: #242323;
     height: 85vh;
     width: 100%;
 }
@@ -25,14 +33,15 @@ main{
     height: 70vh;
     width: 70%;
     float: left;
-    background-color: blueviolet;
+    background-color: #C33C54;
     margin-left: 5%;
+    text-align: center;
 }
 #prawy{
     height: 70vh;
     width: 20%;
     float: left;
-    background-color: blueviolet;
+    background-color: #C33C54;
     margin-left: 1%;
 }
 #lewy, #prawy{
@@ -42,6 +51,9 @@ h2{
     text-align: center;
     color: white;
     font-size: 1.9em;
+    width: 20%;
+    float: left;
+
 }
 
 #klik{
@@ -50,19 +62,26 @@ h2{
     left: 40%;
     top: 50%;
     background: none;
-    border: 2px solid deepskyblue ;
-    border-radius: 10px;
+    border: 4px solid #242323 ;
+    border-radius: 20px;
     color: white;
     padding: 1.5% 2% 1.5% 2%;
-    background-color: chartreuse;
     font-size: 1.8em;
 
 }
 
 footer{
-    background-color: gray;
+    background-color: #B79FAD;
     height: 5vh;
     width: 100%;
     display: flex;
     justify-content: center;
+}
+nav{
+    float: right;
+    height: 85vh;
+}
+nav button{
+    height:10vh;
+    
 }
