@@ -13,8 +13,13 @@ header{
     height: 10vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 1.3em;
+}
+a{
+    text-decoration: none;
+    color: black;
+    margin-right: 1%;
 }
 main{
     background-color: aqua;
