@@ -1,0 +1,1 @@
+SELECT username, points FROM users ORDER BY points DESC;
