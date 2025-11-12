@@ -11,7 +11,7 @@
     <header>
         <span></span>
         <h1>Clicker</h1>
-        <a id="login_tekst" href="logowanie.html">Zaloguj się</a>
+        <a id="login_tekst" href="logowanie.php">Zaloguj się</a>
 
     </header>
     
@@ -27,10 +27,27 @@
         </section>
         <section id="prawy">
             <h1 style="text-align: center; color: white;">Ranking:</h1>
-            <table>skryp2</table>
+            <ol>
+                <?php
+                $pol = mysqli_connect("localhost","root","","uzytkownik");
+                $query = "SELECT username, points FROM users ORDER BY points DESC;";
+                $d = mysqli_query($pol, $query);
+                while ($row=mysqli_fetch_row($d)){
+                    echo"<li>$row[0]   $row[1]</li>";
+                }
+                
+                
+                
+                
+                
+                mysqli_close($pol);
+                ?>
+            </ol>
         </section>
     </main>
-    <footer><p>Wykonali: 1hgfuyfgyhuftryguhftrgyfhtur   </p></footer>
+    <footer>
+        <p>Wykonali: Monika Pawłowska, Bartosz Graca i Bartosz Bartczak Rejestracja u Administaratora   </p>
+    </footer>
 
 </body>
 <script src="script.js"></script>

@@ -1,3 +1,7 @@
+setTimeout(komunikat,3000)
+function komunikat(){alert("Bartczak nic nie zrobił")} 
+
+
 let klik = document.getElementById("klik");
 let punkty = 0;
 let punktyZaKlikniecie = 1;

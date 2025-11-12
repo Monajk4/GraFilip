@@ -70,14 +70,47 @@
     }
 </style>
 <body>
-    <a href="/index.html"><header>Clicker</header></a>
-    <main>
+    <a href="http://localhost/gra/cliker/index.php"><header>Clicker</header></a>
+    <form method="POST">
+        <main>
         Nazwa użytkownika:   <br>
-        <input type="text" id="username"/><br><br>
+        <input type="text" id="username" name="username"><br><br>
         Hasło:<br>
-        <input type="password" id="password"/><br><br>
+        <input type="password" id="password" name="password"><br><br>
         <button id="signin">Zaloguj</button>
-    </main>
+        <?php
+        $pol = mysqli_connect("localhost","root","","uzytkownik");
+        if(isset($_POST["username"])&&isset($_POST["password"]))
+        {
+        $nazwa=$_POST["username"];
+        $haslo=$_POST["password"];
+        
+
+        $query='SELECT username, password From users Where username = "'.$nazwa.'"' ;
+        $d = mysqli_query($pol,$query);
+        $row = mysqli_fetch_assoc($d);
+        if(empty($row["username"]))
+        {
+            echo '<br><br>Błędna nazwa użytkownika';
+        }
+        else{
+        if($row["password"]==$haslo)
+        {
+            Echo '<br><br>Zalogowano <br><br> <a href="http://localhost/gra/cliker/index2.php">Wróć do strony z grą</a>';
+            $wartość = $nazwa;
+            setcookie("nazwa",$wartość, time()+86400, "http://localhost/gra/cliker/index2.php");
+        }
+        else {
+            echo '<br><br>Błędne hasło';
+        }
+        }
+        }
+        mysqli_close($pol);
+    ?>
+        </main>
+        
+    </form>
+    
     
 </body>
 </html>
